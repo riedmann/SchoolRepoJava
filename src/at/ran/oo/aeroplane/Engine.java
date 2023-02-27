@@ -1,4 +1,4 @@
-package at.ran.oo.aeroplane;
+package at.ran.oo.demo.aeroplane;
 
 public class Engine {
     private int hp;
