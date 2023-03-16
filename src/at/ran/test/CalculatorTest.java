@@ -1,38 +1,42 @@
 package at.ran.test;
 
-import at.ran.devops.Calculator;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
-    Calculator calc = new Calculator();
+    private Calculator calc;
 
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     void setUp() {
-        System.out.println("Setup");
+        this.calc = new Calculator();
     }
 
-    @org.junit.jupiter.api.AfterEach
+    @AfterEach
     void tearDown() {
-        System.out.println("Tear down");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void add() {
-        int result = calc.add(4,7);
-        Assertions.assertEquals(result, 11);
+
+        double result = calc.add(4,7);
+        Assertions.assertEquals(11,result);
     }
 
-    @org.junit.jupiter.api.Test
-    void multiply() {
-        int result = calc.multiply(4,7);
-        Assertions.assertEquals(result, 28);
+    @Test
+    void add1() {
+
+        double result = calc.add(-3,3);
+        Assertions.assertEquals(0,result);
     }
 
-    @org.junit.jupiter.api.Test
-    void complex() {
-        int result = calc.complex(4,7);
-        Assertions.assertEquals(result, 11);
+    @Test
+    void subtract() {
+
+        double result = calc.subtract(10,4);
+        Assertions.assertEquals(6,result);
     }
 }
